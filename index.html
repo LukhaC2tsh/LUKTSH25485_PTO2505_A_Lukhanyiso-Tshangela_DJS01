@@ -74,13 +74,20 @@
                         &times;
                     </button>
                 </div>
-
-                <label for="podcast-desc">Description</label>
-                <textarea id="podcast-desc" name="description" rows="4"></textarea>
-
-                <label for="podcast-genres">Genres</label>
-                <button type="button" class="genre-button" id="genre-button">genre-1</button>
-                <button type="button" class="genre-button" id="genre-button">genre-1</button>
+                <div class="modal-info">   
+                    <img src="" id="podcast-thumbnail" alt="placeholder">
+                    <label for="podcast-desc">Description</label>
+                    <textarea id="podcast-desc" name="description" rows="4"></textarea>
+                    <label for="podcast-genres">Genres</label>
+                    <button type="button" class="genre-button" id="genre-button">genre-1</button>
+                    <button type="button" class="genre-button" id="genre-button">genre-1</button>
+                    <time id="podcast-date"></time>
+                </div>
+                <div class="episodes">
+                    <h2>Episodes</h2>
+                    <div class="list-episodes"></div>
+                </div>
+                
             </form>
         </dialog>
     </main>
