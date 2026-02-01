@@ -12,7 +12,7 @@
             <h2>PODCAST</h2>
             <form class="podcast-search" role="search">
                 <label for="search-input">search</label>
-                <input type="input" placeholder="search" aria-label="search podcasts">
+                <input type="input" id="search-input" placeholder="search" aria-label="search podcasts">
             </form>
             <img src="" id="podcast-logo" alt="logo of podcast">
         </nav>
@@ -24,7 +24,7 @@
     <section>
         <div id="app-controls" class="filters">
             <form id="form_filter">
-                <label for="filter">Filter By: </label>
+                <label for="genre-filter">Filter By: </label>
                 <select name="genre" id="genre-filter">
                     <option value="All Genres">All Genres</option>
                     <option value="genre 1">Genre 1</option>
@@ -32,7 +32,7 @@
                     <option value="genre 3">Genre 3</option>
                     <option value="genre 4">Genre 4</option>
                 </select>
-                <label for="sort">Sort By</label>
+                <label for="sort-filter">Sort By</label>
                 <select name="sort-by" id="sort-filter">
                     <option value="most popular">Most Popular</option>
                     <option value="recently updated">Recently Updated</option>
@@ -42,13 +42,47 @@
         </div>
     </section>
 
-
-
-
     <main id="app-content" class="podcast-grid">
-        <article class="podcast-card">
+        <div class="container">
+            <main class="card-column-main">
+            <!-- 1st Columns: Display podcast in column -->
+            <div class="column-div" data-status="todo">
+                <!-- Podcast container for COLUMN 1 -->
+                <div class="podcast-container"></div>
+            </div>
+            <!-- 2nd Column -->
+            <div class="column-div" data-status="doing">
+                <!-- Podscast container for COLUMN 2 -->
+                <div class="podcast-container"></div>
+            </div>
+            <!-- 3rd Column -->
+            <div class="column-div" data-status="done">
+                <!-- Podcast container for COLUMN 3 -->
+                <div class="podcast-container"></div>
+            </div>
+            </main>
+        </div>
 
-        </article>
+        <!--PODCAST MODAL-->
+        <dialog id="task-modal" class="open">
+            <form method="dialog" id="podcast-form">
+                <label for="podcast-title">Title</label>
+                <input type="text" id="podcast-title" name="title" required />
+
+                <div class="modal-header">
+                    <button type="button" class="close-btn" id="close-modal-btn">
+                        &times;
+                    </button>
+                </div>
+
+                <label for="podcast-desc">Description</label>
+                <textarea id="podcast-desc" name="description" rows="4"></textarea>
+
+                <label for="podcast-genres">Genres</label>
+                <button type="button" class="genre-button" id="genre-button">genre-1</button>
+                <button type="button" class="genre-button" id="genre-button">genre-1</button>
+            </form>
+        </dialog>
     </main>
 </body>
 </html>
