@@ -20,6 +20,6 @@
   --z-modal: 1000;
 }
 
-.open{
-  display: flex;
+body{
+  background-color: var(--color-bg);
 }
