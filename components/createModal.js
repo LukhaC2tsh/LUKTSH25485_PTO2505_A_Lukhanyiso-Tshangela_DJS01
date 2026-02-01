@@ -1,14 +1,15 @@
 // modal.js
 import { getGenreTitles } from './podcasts.js';
+import { DateUtils } from './dateUtils.js';
 
 export const modal = (() => {
   const modalContainer = document.getElementById('podcast-modal');
   const imgEl = document.getElementById('podcast-thumbnail');
   const titleEl = document.getElementById('podcast-title');
   const descEl = document.getElementById('podcast-desc');
-  const genreWrapper = document.querySelector('.genre-buttons');
+  const genreContainer = document.querySelector('.genre-buttons');
   const dateEl = document.getElementById('podcast-date');
-  const episodesWrapper = document.querySelector('.list-episodes');
+  const episodesContainer = document.querySelector('.list-episodes');
   const closeBtn = document.getElementById('close-modal-btn');
 
   // Close button
@@ -20,28 +21,24 @@ export const modal = (() => {
     titleEl.textContent = podcast.title;
     descEl.textContent = podcast.description;
 
-    genreWrapper.innerHTML = ''; 
+    genreContainer.innerHTML = ''; 
     const genreTitles = getGenreTitles(podcast.genres);
     genreTitles.forEach(title => {
       const btn = document.createElement('button');
       btn.classList.add('genre-button');
       btn.textContent = title;
-      genreWrapper.appendChild(btn);
+      genreContainer.appendChild(btn);
     });
 
-    const date = new Date(podcast.updated);
-    dateEl.textContent = `Updated ${date.toLocaleDateString(undefined, {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    })}`;
+    dateEl.textContent = `Updated ${DateUtils.format(podcast.updated)}`;
 
-    episodesWrapper.innerHTML = ''; 
+
+    episodesContainer.innerHTML = ''; 
     if (podcast.seasons && podcast.seasons > 0) {
       for (let i = 1; i <= podcast.seasons; i++) {
         const ep = document.createElement('p');
         ep.textContent = `Season ${i}`;
-        episodesWrapper.appendChild(ep);
+        episodesContainer.appendChild(ep);
       }
     }
   }
