@@ -9,13 +9,20 @@
 <body>
     <header>
         <nav>
-            <img src="" id="podcast-icon" alt="icon of podcast app">
-            <h2>PODCAST</h2>
-            <form class="podcast-search" role="search">
-                <label for="search-input">search</label>
-                <input type="input" id="search-input" placeholder="search" aria-label="search podcasts">
-            </form>
-            <img src="" id="podcast-logo" alt="logo of podcast">
+            <div class="left-side-nav">
+<!--<a href="https://www.flaticon.com/free-icons/podcast" title="podcast icons">Podcast icons created by Tanah Basah - Flaticon</a>-->
+                <img src="assets/icons & logos/podcast-icon.png" id="podcast-icon" alt="icon of podcast app">
+                <h2>PODCAST</h2>
+            </div>
+            <div class="right-side-nav">
+                <img src="assets/icons & logos/search-icon.png" id="search-icon" alt="icon of search button">
+                <form class="podcast-search hidden" role="search">
+                    <label for="search-input">search</label>
+                    <input type="input" id="search-input" placeholder="search" aria-label="search podcasts">
+                </form>
+                <!--<a href="https://www.flaticon.com/free-icons/profile-picture" title="profile picture icons">Profile picture icons created by Flipicon - Flaticon</a>-->
+                <img src="assets/icons & logos/profile-icon.png" id="profile-icon" alt="logo of user profile">
+            </div>
         </nav>
     </header>
 
@@ -65,32 +72,23 @@
         </div>
 
         <!--PODCAST MODAL-->
-        <dialog id="task-modal" class="open">
-            <form method="dialog" id="podcast-form">
-                <label for="podcast-title">Title</label>
-                <input type="text" id="podcast-title" name="title" required />
-
-                <div class="modal-header">
-                    <button type="button" class="close-btn" id="close-modal-btn">
-                        &times;
-                    </button>
-                </div>
-                <div class="modal-info">   
-                    <img src="" id="podcast-thumbnail" alt="placeholder">
-                    <label for="podcast-desc">Description</label>
-                    <textarea id="podcast-desc" name="description" rows="4"></textarea>
-                    <title>Genres</title>
-                    <button type="button" class="genre-button" id="genre-button">genre-1</button>
-                    <button type="button" class="genre-button" id="genre-button">genre-1</button>
-                    <time id="podcast-date"></time>
-                </div>
-                <div class="episodes">
-                    <h2>Episodes</h2>
-                    <div class="list-episodes"></div>
-                </div>
-                
-            </form>
+        <dialog id="task-modal" class="hidden">
+            <div class="modal-header">
+                <button type="button" class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-info">
+                <img id="podcast-thumbnail" src="" alt="podcast cover" />
+                <h3 id="podcast-title"></h3>
+                <p id="podcast-desc"></p>
+                <div class="genre-buttons"></div>
+                <time id="podcast-date"></time>
+            </div>
+            <div class="episodes">
+                <h4>Episodes</h4>
+                <div class="list-episodes"></div>
+            </div>
         </dialog>
+
     </main>
 </body>
 </html>

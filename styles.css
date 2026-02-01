@@ -1,0 +1,70 @@
+:root {
+  /* Colors */
+  --color-bg: #e8f0ffed;
+  --color-surface: #e6ecff;
+  --color-text: #091429;
+  --color-muted: rgb(251, 252, 255);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* Z-index */
+  --z-modal: 1000;
+}
+
+body{
+  background-color: var(--color-bg);
+  margin: 0;
+}
+
+#podcast-icon{
+  width: 2rem;
+  height: 2rem;
+}
+
+#profile-icon{
+  width: 2rem;
+  height: 2rem;
+}
+
+#search-icon{
+  width: 2rem;
+  height: 2rem;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--color-muted);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.left-side-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.right-side-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.show{
+  display: contents;
+}
+
+.hidden{
+  display: none;
+}
